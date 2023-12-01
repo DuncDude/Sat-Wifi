@@ -13,7 +13,7 @@ def scan(x, y):
 
 def axis_to_name(x, y):
     # record current axis degrees for filename to be saved
-    file_name = f"x:{x},y:{y}"
+    file_name = ("x:"+ str(x)+ ",y:" + str(y))
     return file_name
 
 
