@@ -1,5 +1,6 @@
 import os
 
+
 def compare_essid_across_files(essid, file_list):
     stronger_signals = {}
 
@@ -10,10 +11,11 @@ def compare_essid_across_files(essid, file_list):
                     continue  # Skip header
                 parts = line.strip().split(", ")
                 bssid = parts[0].split(":")[1].strip()
-                
+
                 # Extract signal strength and remove " dBm"
-                signal_strength_str = parts[2].split(":")[1].strip().replace(" dBm", "")
-                
+                signal_strength_str = parts[2].split(
+                    ":")[1].strip().replace(" dBm", "")
+
                 # Handle cases where signal strength is not a valid integer
                 try:
                     signal_strength = int(signal_strength_str)
@@ -27,6 +29,7 @@ def compare_essid_across_files(essid, file_list):
                         stronger_signals[bssid] = (file, signal_strength)
 
     return stronger_signals
+
 
 # Example usage:
 essid_to_compare = "Guacamole"
