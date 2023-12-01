@@ -15,10 +15,10 @@ FAST = 0.00075
 MEDIUM = 0.002
 SLOW = 0.001
 
-SELECTED_SPEED = MEDIUM
+# SELECTED_SPEED = MEDIUM
 
 
-def move_to_position(axis, target_angle):
+def move_to_position(axis, target_angle, speed=MEDIUM):
     target_angle = float(target_angle)
     print("Moving to position: " + str(target_angle) + " degrees")
     if axis == 'x':
@@ -34,7 +34,7 @@ def move_to_position(axis, target_angle):
         in4 = 19
 
     # Careful lowering this; at some point, you run into the mechanical limitation of how quickly your motor can move
-    step_sleep = SELECTED_SPEED
+    step_sleep = speed
 
     # Steps per revolution with 1/64 microstepping
     steps_per_revolution = 64 * 64
