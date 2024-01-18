@@ -88,7 +88,6 @@ class WiFiScanner:
             os.system(f"sudo airmon-ng stop {monitor_mode_interface}")
 
             self.cleanup_files()
-
     def cleanup_files(self):
         for file_name in os.listdir():
             if file_name.endswith((".py", ".txt")) or os.path.isdir(file_name):
@@ -98,6 +97,5 @@ class WiFiScanner:
                 print(f"Deleted file: {file_name}")
             except Exception as e:
                 print(f"Error deleting file {file_name}: {e}")
-    # if __name__ == "__main__":
-    #     interface = "wlp2s0"  # Replace with your WiFi interface
-    #     main(interface)
+
+
