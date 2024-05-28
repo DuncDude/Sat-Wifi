@@ -17,7 +17,7 @@ class WiFiScanner:
         return f"{interface}"
 
     def start_airodump(self, interface, output_file):
-        command = f"sudo airodump-ng --wps -w {output_file} {interface}"
+        command = f"sudo  --wps -w {output_file} {interface}"
         print(f"Running command: {command}")
 
         process = subprocess.Popen(command, shell=True, preexec_fn=os.setsid)
